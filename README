@@ -8,5 +8,10 @@ if (condition)
     ...
 }
 the plugin will echo the line "if (condition)" and not the lone "{".
+
 By default, the plugin scans the line containing the opening brace and the two lines above that, looking for the statement that begins the block, be it a loop or function definition.  If you want more or less, set it in the variable g:MP_stmt_thresh.
+
+If you use a custom ruler format, the plugin might generate messages too long for the command bar and you will be prompted to continue like so: "Press ENTER or type command to continue". To avoid this, set a variable containing your ruler length in your vimrc:
+
+let MP_rulerwidth=30
 

@@ -241,6 +241,10 @@ function! s:TreatText(linenum) "{{{
 						let to_fill -= 17
 					elseif exists('g:MP_rulerwidth')
 						let to_fill -= g:MP_rulerwidth
+					else
+						" avoid annoying prompts even if mp_rulerwidth is not set
+						" (via baumichel)
+						let to_fill -= strlen(&rulerformat)
 					endif
 				endif
  			endif
